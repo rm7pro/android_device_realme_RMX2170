@@ -7,16 +7,14 @@
 # Inherit from RMX2170 device
 $(call inherit-product, device/realme/RMX2170/device.mk)
 
+# Inherit some common EvolutionX stuff
+$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+
 # Bootanimation Resolution
 TARGET_BOOT_ANIMATION_RES := 1080
 
-WITH_GAPPS := true
-
-# Inherit some common AospExtended stuff
-$(call inherit-product, vendor/aosp/common.mk)
-
 # Device identifier
-PRODUCT_NAME := aosp_RMX2170
+PRODUCT_NAME := evolution_RMX2170
 PRODUCT_DEVICE := RMX2170
 PRODUCT_BRAND := Realme
 PRODUCT_MODEL := Realme 7 Pro
@@ -32,3 +30,14 @@ BUILD_FINGERPRINT := "google/coral/coral:11/RQ3A.210605.005/7349499:user/release
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="RMX2170" \
     TARGET_DEVICE="RMX2170"
+
+# Inherit EvolutionX build stuff.
+WITH_GAPPS := true
+TARGET_GAPPS_ARCH := arm64
+TARGET_BOOT_ANIMATION_RES_EVO := true
+TARGET_PIXEL_CHARGE_ANIM := true
+
+# Memetainer stuff
+EVO_DONATE_URL := https://paypal.me/marshmello61
+EVO_MAINTAINER := Mayur-Varde
+EVO_SUPPORT_URL := https://t.me/mellolab
