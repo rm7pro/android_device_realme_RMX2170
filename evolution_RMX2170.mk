@@ -36,6 +36,7 @@ WITH_GAPPS := true
 TARGET_GAPPS_ARCH := arm64
 TARGET_BOOT_ANIMATION_RES_EVO := true
 TARGET_PIXEL_CHARGE_ANIM := true
+EXTRA_FOD_ANIMATIONS := true
 
 # Memetainer stuff
 EVO_DONATE_URL := https://paypal.me/marshmello61
