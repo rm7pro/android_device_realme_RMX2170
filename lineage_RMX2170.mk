@@ -7,7 +7,7 @@
 # Inherit from RMX2170 device
 $(call inherit-product, device/realme/RMX2170/device.mk)
 
-# Inherit some common EvolutionX stuff
+# Inherit some common Ricedroid stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Bootanimation Resolution
@@ -33,14 +33,13 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # Input additional flags here.
 RICE_MAINTAINER := SAMMY
+RICE_OFFICIAL := true
+RICE_DEVICE := RMX2170
 WITH_GAPPS := true
 TARGET_GAPPS_ARCH := arm64
 TARGET_HAS_UDFPS := true
 TARGET_ENABLE_BLUR := true
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
-#TARGET_PIXEL_CHARGE_ANIM := true
-#EXTRA_UDFPS_ANIMATIONS := true
-#TARGET_SUPPORTS_NOW_PLAYING := true
-#USE_PIXEL_CHARGER_IMAGES := true
-#TARGET_BUILD_GRAPHENEOS_CAMERA := false
+TARGET_BUILD_GRAPHENEOS_CAMERA := false
+
