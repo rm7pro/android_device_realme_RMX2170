@@ -7,7 +7,7 @@
 # Inherit from RMX2170 device
 $(call inherit-product, device/realme/RMX2170/device.mk)
 
-# Inherit some common Ricedroid stuff
+# Inherit some common EvolutionX stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Bootanimation Resolution
@@ -16,30 +16,42 @@ TARGET_BOOT_ANIMATION_RES := 1080
 # Device identifier
 PRODUCT_NAME := lineage_RMX2170
 PRODUCT_DEVICE := RMX2170
-PRODUCT_BRAND := Realme
-PRODUCT_MODEL := Realme 7 Pro
-PRODUCT_MANUFACTURER := Realme
+PRODUCT_BRAND := realme
+PRODUCT_MODEL := 7 Pro
+PRODUCT_MANUFACTURER := realme
+
+# PRODUCT_SYSTEM_NAME := RMX2170
+# PRODUCT_SYSTEM_DEVICE := RMX2170
 
 PRODUCT_GMS_CLIENTID_BASE := android-realme
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="atoll-user 11 RKQ1.200903.002/ eng.root.04080114.013112 release-keys"
+    BuildDesc="atoll-user 11 RKQ1.200903.002/ eng.root.04080114.013112 release-keys" \
+    BuildFingerprint=qti/atoll/atoll:11/RKQ1.200903.002/root04080114:user/release-keys \
+    DeviceProduct=RMX2170 \
+    SystemName=RMX2170
+#BUILD_FINGERPRINT := "qti/atoll/atoll:11/RKQ1.200903.002/root04080114:user/release-keys"
 
-BUILD_FINGERPRINT := "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys"
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.build.fingerprint=$(BUILD_FINGERPRINT)
 
+#PRODUCT_BUILD_PROP_OVERRIDES += \
+    #TARGET_PRODUCT="RMX2170" \
+    #TARGET_DEVICE="RMX2170"
+
+# RisingOS-Revived Stuffs
+RISING_MAINTAINER="FogedUser"
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME="RMX2170" \
-    TARGET_DEVICE="RMX2170"
-
-# Input additional flags here.
-RICE_MAINTAINER := SAMMY
-RICE_OFFICIAL := true
-RICE_DEVICE := RMX2170
-WITH_GAPPS := true
-TARGET_GAPPS_ARCH := arm64
-TARGET_HAS_UDFPS := true
+    RisingChipset="Snapdragon 720G" \
+    RisingMaintainer="FogedUser"
+RISING_MAINTAINER := FogedUser
 TARGET_ENABLE_BLUR := true
+PRODUCT_NO_CAMERA := false
+WITH_GMS := true
+TARGET_CORE_GMS := true
+#TARGET_CORE_GMS_EXTRAS := true
+TARGET_INCLUDE_GOOGLE_DIALER := true
+TARGET_DEFAULT_PIXEL_LAUNCHER := true
 TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_FACE_UNLOCK_SUPPORTED := true
-TARGET_BUILD_GRAPHENEOS_CAMERA := false
-
+TARGET_HAS_UDFPS := true
+EXTRA_UDFPS_ANIMATIONS := true
