@@ -7,7 +7,7 @@
 # Inherit from RMX2170 device
 $(call inherit-product, device/realme/RMX2170/device.mk)
 
-# Inherit some common EvolutionX stuff
+# Inherit some common Lineage stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Bootanimation Resolution
@@ -20,8 +20,6 @@ PRODUCT_BRAND := realme
 PRODUCT_MODEL := 7 Pro
 PRODUCT_MANUFACTURER := realme
 
-# PRODUCT_SYSTEM_NAME := RMX2170
-# PRODUCT_SYSTEM_DEVICE := RMX2170
 
 PRODUCT_GMS_CLIENTID_BASE := android-realme
 
@@ -30,28 +28,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildFingerprint=qti/atoll/atoll:11/RKQ1.200903.002/root04080114:user/release-keys \
     DeviceProduct=RMX2170 \
     SystemName=RMX2170
-#BUILD_FINGERPRINT := "qti/atoll/atoll:11/RKQ1.200903.002/root04080114:user/release-keys"
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.build.fingerprint=$(BUILD_FINGERPRINT)
-
-#PRODUCT_BUILD_PROP_OVERRIDES += \
-    #TARGET_PRODUCT="RMX2170" \
-    #TARGET_DEVICE="RMX2170"
-
-# RisingOS-Revived Stuffs
-RISING_MAINTAINER="FogedUser"
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    RisingChipset="Snapdragon 720G" \
-    RisingMaintainer="FogedUser"
-RISING_MAINTAINER := FogedUser
-TARGET_ENABLE_BLUR := true
-PRODUCT_NO_CAMERA := false
-WITH_GMS := true
-TARGET_CORE_GMS := true
-#TARGET_CORE_GMS_EXTRAS := true
-TARGET_INCLUDE_GOOGLE_DIALER := true
-TARGET_DEFAULT_PIXEL_LAUNCHER := true
+# Target
 TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_HAS_UDFPS := true
-EXTRA_UDFPS_ANIMATIONS := true
+
