@@ -31,8 +31,4 @@ PRODUCT_COPY_FILES += \
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
-# Udfps
-PRODUCT_PACKAGES += \
-    UdfpsResources
-
 PRODUCT_FULL_TREBLE_OVERRIDE := true
